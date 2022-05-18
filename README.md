@@ -15,7 +15,7 @@ Contains a single `index.tsx` file.
 Python Aiohttp server, which serves static `index.min.js`, which is built from client folder.
 This is borrowed from my previous project, so some unnecessary complications are present, like logging and templates folder.
 
-Exposes an `api/items` endpoint, which actually filters a list of cities by substring, passed over in a `q` parameter. No error handling and no edge case checks is present.
+The server exposes an `api/items` endpoint, which actually filters a list of cities by substring, passed over in a `q` parameter. No error handling and no edge case checks is present.
 
 ## Video
 
