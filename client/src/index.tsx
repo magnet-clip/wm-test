@@ -1,12 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import classnames from "classnames";
 import { createRoot } from "react-dom/client";
 // you should import `lodash` as a whole module
 import lodash from "lodash";
 import axios from "axios";
 
-const ITEMS_API_URL = "https://example.com/api/items";
+const ITEMS_API_URL = `${window.location.origin}/api/items`; //"https://example.com/api/items";
 const DEBOUNCE_DELAY = 500;
 
 // the exported component can be either a function or a class
@@ -16,11 +15,11 @@ const getItems = (query: string): Promise<string[]> => {
   return axios
     .get(`${ITEMS_API_URL}?q=${query}`)
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       return response.data;
     })
     .catch((error) => {
-      console.error(error);
+      // console.error(error);
       return [];
     });
 };
@@ -31,7 +30,11 @@ const getItemsDebounced = lodash.debounce(
   DEBOUNCE_DELAY
 );
 
-function Autocomplete() {
+function Autocomplete({
+  onSelected,
+}: {
+  onSelected: (idx: number, name: string) => void;
+}) {
   const [fetching, setFetching] = React.useState(false);
   const [items, setItems] = React.useState<string[]>([]);
   const [query, setQuery] = React.useState("");
@@ -41,15 +44,17 @@ function Autocomplete() {
     setQuery(val);
     setFetching(true);
 
-    const promise = getItemsDebounced(val, (res: string[]) => {
-      console.log(res);
+    getItemsDebounced(val, (res: string[]) => {
+      // console.log(res);
       setItems(res);
       setFetching(false);
     });
   };
 
-  const itemElements = items.map((i: string) => (
-    <a className="list-item">{i}</a>
+  const itemElements = items.map((item: string, idx: number) => (
+    <a key={idx} className="list-item" onClick={() => onSelected(idx, item)}>
+      {item}
+    </a>
   ));
 
   const listClasses = classnames({
@@ -68,15 +73,15 @@ function Autocomplete() {
           onChange={onTextChanged}
         />
       </div>
-      {items && items.length > 0 && (
-        <div className={listClasses}>{itemElements}</div>
-      )}
+      {items.length > 0 && <div className={listClasses}>{itemElements}</div>}
     </div>
   );
 }
 
 function Main() {
-  return <Autocomplete />;
+  const onItemSelected = (idx: number, name: string) =>
+    console.log("Item selected", idx, name);
+  return <Autocomplete onSelected={onItemSelected} />;
 }
 
 const container = document.getElementById("app");

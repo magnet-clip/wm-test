@@ -12,6 +12,7 @@ from aiohttp_jinja2 import setup as setup_jinja
 path = Path(__file__).parent.parent
 log = logging.getLogger(__file__)
 
+
 def init_logging(level):
     if level == 'debug':
         log_level = logging.DEBUG
@@ -36,6 +37,7 @@ def init_logging(level):
         level=log_level,
         force=True)
 
+
 async def init_app() -> web.Application:
     app = web.Application()
 
@@ -43,6 +45,7 @@ async def init_app() -> web.Application:
 
     handler = SiteHandler()
     app.router.add_route('GET', '/', handler.index, name='index')
+    app.router.add_route('GET', '/api/items', handler.items, name='items')
     app.router.add_static(
         '/static/', path=(path / 'static'), name='static'
     )
@@ -59,4 +62,5 @@ def main():
     app = loop.run_until_complete(init_app())
     # app.cleanup_ctx.append(watcher_engine)
 
-    web.run_app(app, print=log.info, host=app_config.server.host, port=app_config.server.port)
+    web.run_app(app, print=log.info, host=app_config.server.host,
+                port=app_config.server.port)
