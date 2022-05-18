@@ -1,0 +1,24 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: osx-arm64
+@EXPLICIT
+https://repo.anaconda.com/pkgs/main/osx-arm64/bzip2-1.0.8-h620ffc9_4.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/ca-certificates-2022.4.26-hca03da5_0.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/libcxx-12.0.0-hf6beb65_1.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/ncurses-6.3-h1a28f6b_2.conda
+https://repo.anaconda.com/pkgs/main/noarch/tzdata-2022a-hda174b7_0.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/xz-5.2.5-h1a28f6b_1.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/yaml-0.2.5-h1a28f6b_0.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/zlib-1.2.12-h5a0b063_2.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/libffi-3.4.2-hc377ac9_2.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/openssl-1.1.1o-h1a28f6b_0.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/readline-8.1.2-h1a28f6b_1.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/tk-8.6.11-hb8d0fd4_1.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/sqlite-3.38.3-h1058600_0.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/python-3.10.4-hbdb9e5c_0.tar.bz2
+https://repo.anaconda.com/pkgs/main/osx-arm64/certifi-2021.10.8-py310hca03da5_2.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/pyyaml-6.0-py310h1a28f6b_0.conda
+https://repo.anaconda.com/pkgs/main/noarch/wheel-0.37.1-pyhd3eb1b0_0.conda
+https://repo.anaconda.com/pkgs/main/noarch/confuse-1.5.0-pyhd3eb1b0_0.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/setuptools-61.2.0-py310hca03da5_0.conda
+https://repo.anaconda.com/pkgs/main/osx-arm64/pip-21.2.4-py310hca03da5_0.conda
