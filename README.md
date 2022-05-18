@@ -18,4 +18,4 @@ Exposes an `api/items` endpoint, which actually filters a list of cities by subs
 
 ## Video
 
-[![Video]]({recording.mov} "Video")
+[Video can be found here](recording.mov)
