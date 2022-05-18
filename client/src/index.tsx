@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 // you should import `lodash` as a whole module
 import lodash from 'lodash';
@@ -25,9 +26,9 @@ const getItems = (query) => {
 
 const getItemsDebounced = lodash.debounce(getItems, DEBOUNCE_DELAY);
 
-export default function Autocomplete() {
+function Autocomplete() {
   const [fetching, setFetching] = React.useState(false);
-  const [items, setItems] = React.useState([]);
+  const [items, setItems] = React.useState<string[]>([]);
   const [query, setQuery] = React.useState('');
   const onTextChanged = (evt) => {
     const val = evt.target.value;
@@ -67,3 +68,8 @@ export default function Autocomplete() {
     </div>
   );
 }
+
+ReactDOM.render(
+  <Autocomplete/>,
+  document.getElementById("app")
+);
