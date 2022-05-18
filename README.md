@@ -1,6 +1,7 @@
 # Autosuggest
 
-This repo shows what I managed to recall from the task I had.
+This repo shows an improved version of solution for a test task. Not sure I managed to recall everything what was requested though.
+
 Main improvement is a fix for debounced promise.
 Also I had to implement some backend to make it work.
 
